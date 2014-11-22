@@ -1,7 +1,9 @@
 OpenID-Connect-Authenticator
 ============================
 
-Note: Alpha version. Not tested, do not use.
+Version
+-------
+Alpha version. Not tested, do not use. Works on Milestone 3 and later.
 
 Build
 -----
@@ -21,6 +23,10 @@ Install
 * Install with TAG107
 * Set as default autenticator with TAG106
 
+Map users
+---------
+
+The mapping will match users by looking for the OpenID email in the "Domain user" (User master file / TAG064 -> Security -> Single sign-on -> Domain user) field. The default client must be set.
 
 Limitations
 -----------
