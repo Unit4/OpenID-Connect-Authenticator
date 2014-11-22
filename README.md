@@ -15,7 +15,7 @@ Requires these Agresso-libraries.
 * Agresso.Interface.Authentication.dll
 * Agresso.Interface.CoreServices.dll
 
-Project is created with Visual Studio 2012.
+The project is created with Visual Studio 2012.
 
 Install
 -------
