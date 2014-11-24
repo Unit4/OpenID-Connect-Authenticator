@@ -1,4 +1,5 @@
-﻿using Agresso.Foundation;
+﻿using System.Linq;
+using Agresso.Foundation;
 using Agresso.Interface.Authentication;
 using Agresso.Interface.Authentication.SingleStage;
 using Agresso.Interface.CoreServices;
@@ -32,8 +33,11 @@ namespace OpenIdConnectAuthenticator
             string code = Request.QueryString["code"];
 
             if (!string.IsNullOrEmpty(code))
-            {  
-                if (Request.QueryString["state"] != HttpContext.Current.Session["state"].ToString())
+            {
+                object state = HttpContext.Current.Session["state"];
+                HttpContext.Current.Session.Remove("state");
+
+                if (state == null || Request.QueryString["state"] != state.ToString())
                 {
                     response.DenyAccess("Request is not valid. Please try again.");
                     return response;
@@ -57,7 +61,7 @@ namespace OpenIdConnectAuthenticator
                 return response;
             }
 
-            string state = RandState();
+            string random = Random(32);
 
             string getCode = string.Format("{0}?response_type={1}&scope={2}&client_id={3}&redirect_uri={4}&state={5}", 
                 Settings.AuthorizationEndpoint, 
@@ -65,25 +69,22 @@ namespace OpenIdConnectAuthenticator
                 "openid email", 
                 Settings.ClientId, 
                 Settings.RedirectUri, 
-                state);
+                random);
 
-            HttpContext.Current.Session["state"] = state;
+            HttpContext.Current.Session["state"] = random;
             HttpContext.Current.Response.Redirect(getCode);
 
             return response;
         }
 
-        private string RandState()
+        private string Random(int size)
         {
-            string state = string.Empty;
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
-
-            for (int i = 0; i < 32; i++)
-            {
-                state += random.Next(9);
-            }
-
-            return state;
+            return new string(
+                Enumerable.Repeat(chars, size)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
         }
     }
 
