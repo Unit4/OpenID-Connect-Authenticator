@@ -53,4 +53,4 @@ Enter AG23 - Common parameters and locate the parameter VERIFY_AUTH_CHECKSUM. Tu
 
 Enter TAG107 - Authenticators and check the authenticator and click "Update Checksum". 
 
-**Note**: Caches might have to ble cleared in both cases!
+**Note**: Caches might have to be cleared in both cases!
