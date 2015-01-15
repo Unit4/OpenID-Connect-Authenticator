@@ -41,15 +41,15 @@ Follow instructions to [setup client](https://developers.google.com/accounts/doc
 
 ### Troubleshoot
 
-## System will not load authenticator. Failed security check.
+#### System will not load authenticator. Failed security check.
 
 This error message is displayed because the system fails to compare the equality of assembly checksum of the executed assembly and the assembly checksum calculated when the authenticator was installed (TAG107).
 
-# Solution during development
+##### Solution during development
 
 Enter AG23 - Common parameters and locate the parameter VERIFY_AUTH_CHECKSUM. Turn it off. Then you won't have to update the checksum each time the authenticator is built (next solution).
 
-# Solution in production
+##### Solution in production
 
 Enter TAG107 - Authenticators and check the authenticator and click "Update Checksum". 
 
