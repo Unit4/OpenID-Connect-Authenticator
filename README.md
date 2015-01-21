@@ -1,9 +1,12 @@
 OpenID-Connect-Authenticator
 ----------------------------
 
-### Version
+OpenID Connect authenticator for Agresso Business World Milestone 3 and later.
 
-Alpha version. Not tested, do not use. Works on Milestone 3 and later.
+### DISCLAIMER
+
+This authenticator is used at own risk. UNIT4 is not responsible for any damages caused by using 
+this authenticator.
 
 ### Build
 
