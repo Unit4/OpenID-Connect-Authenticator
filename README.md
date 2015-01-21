@@ -3,7 +3,7 @@ OpenID-Connect-Authenticator
 
 OpenID Connect authenticator for Agresso Business World Milestone 3 and later.
 
-### DISCLAIMER
+### Disclaimer
 
 This authenticator is used at own risk. UNIT4 is not responsible for any damages caused by using 
 this authenticator.
