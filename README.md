@@ -61,4 +61,5 @@ Enter TAG107 - Authenticators and check the authenticator and click "Update Chec
 ### License
 
 Copyright (c) 2014-2015 UNIT4
+
 Released under the MIT license
