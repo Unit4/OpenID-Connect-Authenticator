@@ -32,7 +32,7 @@ The mapping will match users by looking for the OpenID email in the "Domain user
 
 ### Limitations
 
-* JWT Token signature is not verified. TLS required.
+* JWT Token signature is not verified. HTTPS is required.
 
 ### Google setup
 
